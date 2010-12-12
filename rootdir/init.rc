@@ -410,6 +410,13 @@ service mtpd /system/bin/mtpd
     disabled
     oneshot
 
+service openconnect /system/bin/openconnect
+    socket openconnect stream 600 system system
+    user vpn
+    group vpn net_admin net_raw
+    disabled
+    oneshot
+
 service keystore /system/bin/keystore /data/misc/keystore
     user keystore
     group keystore
