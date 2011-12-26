@@ -433,7 +433,8 @@ service mtpd /system/bin/mtpd
 
 service openconnect /system/bin/openconnect-agent
     socket openconnect stream 600 system system
-    user vpn
+#   openconnect will setuid to user vpn
+#   user vpn
     group vpn net_admin net_raw
     disabled
     oneshot
